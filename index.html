@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Random Password Generator</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Random Password Generator</a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-sm-12 mx-auto">
+          <div class="content">
+            <h4>Random Password Generator</h4>
+            <br />
+            <input type="text" id="display" />
+            <br />
+            <label for="slider">Select Number of Characters</label>
+            <input
+              type="range"
+              min="8"
+              max="128"
+              value="50"
+              step="2"
+              oninput="sliderChange(this.value)"
+              name="slider"
+              id="slider"
+            />
+            <br />
+            <div class="checkBoxs">
+              <div class="lowerCaseInput">
+                <label for="lowerCaseCheck">Lower Case</label>
+                <input type="checkbox" id="lowerCaseCheck" />
+              </div>
+              <div class="upperCaseInput">
+                <label for="upperCaseCheck">Upper Case</label>
+                <input type="checkbox" id="upperCaseCheck" />
+              </div>
+              <div class="specialCharInput">
+                <label for="specialChar">Special Chracter</label>
+                <input type="checkbox" id="specialChar" />
+              </div>
+              <div class="numbersInput">
+                <label for="numbers">Numbers</label>
+                <input type="checkbox" id="numbers" />
+              </div>
+            </div>
+            <button id="genBtn">Generate</button>
+            <button onclick="">Copy to Clipboard</button>
+            <div id="Length"></div>
+          </div>
+          <div class="previous_passwords">
+            <strong>Previously Generated Password</strong>
+            <br />
+            <div id="lastNums"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
