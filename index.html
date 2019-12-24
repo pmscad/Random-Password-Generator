@@ -4,70 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Random Password Generator</title>
-
+    <title>Password Generator</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/password.css" />
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Random Password Generator</a>
-    </nav>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-sm-12 mx-auto">
           <div class="content">
-            <h4>Random Password Generator</h4>
-            <br />
-            <input type="text" id="display" />
-            <br />
-            <label for="slider">Select Number of Characters</label>
-            <input
-              type="range"
-              min="8"
-              max="128"
-              value="50"
-              step="2"
-              oninput="sliderChange(this.value)"
-              name="slider"
-              id="slider"
-            />
-            <br />
-            <div class="checkBoxs">
-              <div class="lowerCaseInput">
-                <label for="lowerCaseCheck">Lower Case</label>
-                <input type="checkbox" id="lowerCaseCheck" />
-              </div>
-              <div class="upperCaseInput">
-                <label for="upperCaseCheck">Upper Case</label>
-                <input type="checkbox" id="upperCaseCheck" />
-              </div>
-              <div class="specialCharInput">
-                <label for="specialChar">Special Chracter</label>
-                <input type="checkbox" id="specialChar" />
-              </div>
-              <div class="numbersInput">
-                <label for="numbers">Numbers</label>
-                <input type="checkbox" id="numbers" />
+            <h2 class="heading2">Generate a Password</h2>
+            <textarea
+              readonly
+              id="password"
+              placeholder="Your Secure Password"
+              id="password"
+              aria-label="Generated Password"
+              class="passfield"
+            ></textarea>
+            <p class="information">
+              Select your options and click the 'Generate Password' button. Then
+              your password will appear above.
+            </p>
+            <div class="val">
+              <label for="">Password Length:</label>
+              <input type="text" id="passwordlength" />
+            </div>
+            <div class="val">
+              <input type="checkbox" id="lowercase" />
+              <label for="lowercase" class="check-label"
+                >Use Lowercase Characters</label
+              >
+              <div class="val">
+                <input type="checkbox" id="uppercase" />
+                <label for="uppercase" class="check-label"
+                  >Use Uppercase Characters</label
+                >
+                <div class="val">
+                  <input type="checkbox" id="numbers" />
+                  <label for="numbers" class="check-label">Use Numbers</label>
+                </div>
+                <div class="val">
+                  <input type="checkbox" id="punctuation" />
+                  <label for="punctuation" class="check-label"
+                    >Use special characters</label
+                  >
+                </div>
+                <button
+                  id="generate"
+                  type="button"
+                  class="btn btn-danger btn-lg "
+                  onclick="passwordGenerate()"
+                >
+                  Generate Password
+                </button>
+
+                <button
+                  id="copy"
+                  type="button"
+                  class="btn btn-secondary btn-lg "
+                  onclick="copyPassword()"
+                >
+                  Copy to Clipboard
+                </button>
               </div>
             </div>
-            <button id="genBtn">Generate</button>
-            <button onclick="">Copy to Clipboard</button>
-            <div id="Length"></div>
-          </div>
-          <div class="previous_passwords">
-            <strong>Previously Generated Password</strong>
-            <br />
-            <div id="lastNums"></div>
           </div>
         </div>
       </div>
     </div>
-    <script src="script.js"></script>
+
+    <script src="js/password.js"></script>
   </body>
 </html>
