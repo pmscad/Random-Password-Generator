@@ -11,7 +11,7 @@ The live version of the website can be viewed at: https://pmscad.github.io/Rando
 ## Screenshots
 
 ![image](assets/Password-Generator-1.png)
-![image]()
+![image](assets/Password-Generator-2.png)
 
 ## License
 
